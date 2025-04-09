@@ -1,14 +1,20 @@
 version: '3.9'
+
 services:
   client1:
     build: ./client
+    container_name: client1-app
     ports:
-      - "3000:80"
+      - "4567:80"   # Random port: http://localhost:4567
+
   client2:
     build: ./client2
+    container_name: client2-app
     ports:
-      - "3001:80"
+      - "4821:80"   # Random port: http://localhost:4821
+
   server:
     build: ./server
+    container_name: server-app
     ports:
-      - "6000:6000"
+      - "5923:6000" # Random port: http://localhost:5923
